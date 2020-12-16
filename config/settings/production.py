@@ -166,4 +166,5 @@ LOGGING = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 # Activate Django-Heroku.
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 django_heroku.settings(locals())
