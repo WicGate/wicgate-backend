@@ -4,8 +4,11 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+import os
 
 ROOT_DIR = Path(__file__).parents[2]
+print('ROOT_DIR', ROOT_DIR)
+print('BASE_DIR', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # wicgate/)
 APPS_DIR = ROOT_DIR / "wicgate"
 env = environ.Env()
