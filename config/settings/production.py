@@ -11,6 +11,7 @@ from .base import env
 
 # Static files configuration
 # https://devcenter.heroku.com/articles/django-assets
+BASE_DIR = ROOT_DIR
 WHITENOISE_MANIFEST_STRICT = False
 
 # GENERAL
