@@ -69,8 +69,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 
 # STATIC
 # ------------------------
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # MEDIA
 # ------------------------------------------------------------------------------
@@ -174,4 +173,5 @@ LOGGING = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 # Activate Django-Heroku.
+print('DIRS', ROOT_DIR, BASE_DIR)
 django_heroku.settings(locals())
