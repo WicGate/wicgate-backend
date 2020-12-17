@@ -11,8 +11,9 @@ from .base import env
 
 # Static files configuration
 # https://devcenter.heroku.com/articles/django-assets
-BASE_DIR = ROOT_DIR
 WHITENOISE_MANIFEST_STRICT = False
+# Ensure STATIC_ROOT exists.
+os.makedirs(config['STATIC_ROOT'], exist_ok=True)
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -173,5 +174,4 @@ LOGGING = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 # Activate Django-Heroku.
-print('DIRS', ROOT_DIR, BASE_DIR)
-django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
