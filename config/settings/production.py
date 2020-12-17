@@ -13,7 +13,7 @@ from .base import env
 # https://devcenter.heroku.com/articles/django-assets
 WHITENOISE_MANIFEST_STRICT = False
 # Ensure STATIC_ROOT exists.
-os.makedirs(config['STATIC_ROOT'], exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
 
 # GENERAL
 # ------------------------------------------------------------------------------
