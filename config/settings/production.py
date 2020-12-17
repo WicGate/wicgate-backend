@@ -175,3 +175,6 @@ LOGGING = {
 # ------------------------------------------------------------------------------
 # Activate Django-Heroku.
 django_heroku.settings(locals(), staticfiles=False)
+print('STATIC_ROOT', STATIC_ROOT)
+print('STATIC_URL', STATIC_URL)
+print('STATICFILES_DIRS', STATICFILES_DIRS)
