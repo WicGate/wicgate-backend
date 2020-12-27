@@ -58,16 +58,3 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-
-
-# CORS
-# ------------------------------------------------------------------------------
-CORS_ALLOWED_ORIGINS = [
-    "http://192.168.178.69:8000"
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    "http://192.168.178.69:8000"
-]
-
-CORS_ALLOW_CREDENTIALS = True
