@@ -287,3 +287,4 @@ wicgate/media/
 
 .env
 .envs/*
+/.idea/
