@@ -1,5 +1,20 @@
+from datetime import datetime
+
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
+
+
+def upload_to( instance, filename):
+    now = datetime.now()
+    name = 'replays/{submitter}/{year}/{month}/{day}/{name}_{filename}'.format(
+        submitter=instance.submitter,
+        year=now.strftime('%Y'),
+        month=now.strftime('%m'),
+        day=now.strftime('%d'),
+        name=instance.name,
+        filename=filename
+    )
+    return name
 
 
 class Replay(models.Model):
@@ -31,7 +46,7 @@ class Replay(models.Model):
     view_side = models.CharField(max_length=4, null=True, blank=True)  # TODO: upgrade to choices
     view_player = models.CharField(max_length=32, null=True, blank=True)
     replay_length = models.CharField(max_length=5, null=True, blank=True)
-    file = models.FileField(upload_to='replays', null=False, blank=False)  # upload-to
+    file = models.FileField(upload_to=upload_to, null=False, blank=False)  # upload-to
 
     def __str__(self):
         return '{name} by {submitter} ({vs} {map})'.format(
