@@ -31,7 +31,7 @@ class Replay(models.Model):
     view_side = models.CharField(max_length=4, null=True, blank=True)  # TODO: upgrade to choices
     view_player = models.CharField(max_length=32, null=True, blank=True)
     replay_length = models.CharField(max_length=5, null=True, blank=True)
-    file = models.FileField(null=False, blank=False)  # upload-to
+    file = models.FileField(upload_to='replays', null=False, blank=False)  # upload-to
 
     def __str__(self):
         return '{name} by {submitter} ({vs} {map})'.format(
