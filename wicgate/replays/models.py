@@ -2,11 +2,12 @@ from datetime import datetime
 
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
+from django.db.models import FileField
 
 
 def upload_to( instance, filename):
     now = datetime.now()
-    name = 'replays/{submitter}/{year}/{month}/{day}/{name}_{filename}'.format(
+    name = 'replays/{submitter}/{year}-{month}-{day}/{name}_{filename}'.format(
         submitter=instance.submitter,
         year=now.strftime('%Y'),
         month=now.strftime('%m'),
